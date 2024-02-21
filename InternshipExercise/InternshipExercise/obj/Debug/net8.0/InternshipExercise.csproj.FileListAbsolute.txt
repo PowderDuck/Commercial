@@ -1,0 +1,14 @@
+C:\Users\PowderDuck\source\repos\InternshipExercise\InternshipExercise\bin\Debug\net8.0\InternshipExercise.exe
+C:\Users\PowderDuck\source\repos\InternshipExercise\InternshipExercise\bin\Debug\net8.0\InternshipExercise.deps.json
+C:\Users\PowderDuck\source\repos\InternshipExercise\InternshipExercise\bin\Debug\net8.0\InternshipExercise.runtimeconfig.json
+C:\Users\PowderDuck\source\repos\InternshipExercise\InternshipExercise\bin\Debug\net8.0\InternshipExercise.dll
+C:\Users\PowderDuck\source\repos\InternshipExercise\InternshipExercise\bin\Debug\net8.0\InternshipExercise.pdb
+C:\Users\PowderDuck\source\repos\InternshipExercise\InternshipExercise\obj\Debug\net8.0\InternshipExercise.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PowderDuck\source\repos\InternshipExercise\InternshipExercise\obj\Debug\net8.0\InternshipExercise.AssemblyInfoInputs.cache
+C:\Users\PowderDuck\source\repos\InternshipExercise\InternshipExercise\obj\Debug\net8.0\InternshipExercise.AssemblyInfo.cs
+C:\Users\PowderDuck\source\repos\InternshipExercise\InternshipExercise\obj\Debug\net8.0\InternshipExercise.csproj.CoreCompileInputs.cache
+C:\Users\PowderDuck\source\repos\InternshipExercise\InternshipExercise\obj\Debug\net8.0\InternshipExercise.dll
+C:\Users\PowderDuck\source\repos\InternshipExercise\InternshipExercise\obj\Debug\net8.0\refint\InternshipExercise.dll
+C:\Users\PowderDuck\source\repos\InternshipExercise\InternshipExercise\obj\Debug\net8.0\InternshipExercise.pdb
+C:\Users\PowderDuck\source\repos\InternshipExercise\InternshipExercise\obj\Debug\net8.0\InternshipExercise.genruntimeconfig.cache
+C:\Users\PowderDuck\source\repos\InternshipExercise\InternshipExercise\obj\Debug\net8.0\ref\InternshipExercise.dll
