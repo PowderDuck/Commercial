@@ -1,11 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
+using Npgsql;
 using System.Net;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 
 namespace AdvertisementAPI.Controllers
 {
@@ -21,29 +24,31 @@ namespace AdvertisementAPI.Controllers
         }
 
         [HttpGet("addAD")]
-        public async Task<ActionResult<ADInfo>> AddAdInfo(int siteID, int adID, string url, string link)
+        public async Task<ActionResult<ADInfo>> AddAdInfo(int siteID, int adID, string client, string url, string link)
         {
             try
             {
                 ADInfo newInfo = new ADInfo()
                 {
-                    ID = adID, 
-                    SITEID = siteID, 
-                    URL = url, 
-                    LINK = link
+                    ID = adID,
+                    SITEID = siteID,
+                    URL = url,
+                    LINK = link, 
+                    CLIENT = client
                 };
 
                 await context.Advertisements.AddAsync(newInfo);
 
                 AdStatistic newStatistic = new AdStatistic()
                 {
-                    ID = adID,
+                    STATID = adID,
                     VIEWS = 0,
-                    CLICKS = 0
+                    CLICKS = 0,
+                    VALIDDATE = DateTime.UtcNow
                 };
 
                 await context.ADStatistics.AddAsync(newStatistic);
-                
+
                 await context.SaveChangesAsync();
 
                 return new ActionResult<ADInfo>(newInfo);
@@ -84,10 +89,11 @@ namespace AdvertisementAPI.Controllers
                     string validTicket = await reader.ReadToEndAsync();
                     string phrase = validTicket.Split(':')[0];
                     int targetID = int.Parse(validTicket.Split(':')[1]);
+                    DateTime currentTime = DateTime.UtcNow;
 
                     if(validTicket != null && ticket == phrase)
                     {
-                        List<AdStatistic> statistics = context.ADStatistics.Where(i => (targetID < 0f ? i.ID != targetID : i.ID == targetID)).ToList();
+                        List<AdStatistic> statistics = context.ADStatistics.Where(i => (targetID < 0f ? i.STATID != targetID : i.STATID == targetID) && i.VALIDDATE.Year == currentTime.Year && i.VALIDDATE.Month == currentTime.Month).ToList();
                         for (int i = 0; i < statistics.Count; i++)
                         {
                             statistics[i].VIEWS = 0;
@@ -115,10 +121,11 @@ namespace AdvertisementAPI.Controllers
             try
             {
                 ADInfo info = context.Advertisements.Where(i => i.ID == adID).Single();
-                AdStatistic statistic = context.ADStatistics.Where(i => i.ID == adID).Single();
+                AdStatistic[] statistic = context.ADStatistics.Where(i => i.ID == adID).ToArray();
 
                 context.Advertisements.Remove(info);
-                context.ADStatistics.Remove(statistic);
+                context.ADStatistics.RemoveRange(statistic);
+                //context.ADStatistics.Remove(statistic);
 
                 await context.SaveChangesAsync();
                 
@@ -130,6 +137,46 @@ namespace AdvertisementAPI.Controllers
         }
 
         [HttpGet("getStatistic")]
+        public async Task<ActionResult<List<AdStatistic>>> GetADStatistic(int adID = -1, int m = 0, int y = 0, int range = 1)
+        {
+            try
+            {
+                DateTime referenceDate = m <= 0f && y <= 0f ? DateTime.UtcNow : new DateTime(year: y, month: m, day: 1).ToUniversalTime();
+                float months = (referenceDate.Year * 12 + referenceDate.Month);
+                float rangeMonths = months - (range - 1f);
+
+                //ConditionWhetherToAccessTheStatisticByIDORByTheTimeExplicitly;
+                //List<AdStatistic> statistic = context.ADStatistics.Where(i => i.ID == adID && i.VALIDDATE.Year * 12 + i.VALIDDATE.Month >= rangeMonths && i.VALIDDATE.Year * 12 + i.VALIDDATE.Month <= months).OrderBy(i => i.VALIDDATE).ToList();
+                List<AdStatistic> statistic = context.ADStatistics.Where(i => (adID < 0f ? i.STATID != adID : i.STATID == adID) && i.VALIDDATE.Year * 12 + i.VALIDDATE.Month >= rangeMonths && i.VALIDDATE.Year * 12 + i.VALIDDATE.Month <= months).OrderBy(i => i.STATID).ToList();
+                
+                return new ActionResult<List<AdStatistic>>(statistic);
+            }
+            catch { }
+
+            return NotFound();
+        }
+
+        /*[HttpGet("getStatistic")]
+        public async Task<ActionResult<List<AdStatistic>>> GetADStatistic(int adID = -1, int m = 0, int y = 0, int range = 1)
+        {
+            try
+            {
+                DateTime referenceDate = m <= 0f && y <= 0f ? DateTime.UtcNow : new DateTime(year: y, month: m, day: 1).ToUniversalTime();
+                float months = (referenceDate.Year * 12 + referenceDate.Month);
+                float rangeMonths = months - (range - 1f);
+
+                //ConditionWhetherToAccessTheStatisticByIDORByTheTimeExplicitly;
+                //List<AdStatistic> statistic = context.ADStatistics.Where(i => i.ID == adID && i.VALIDDATE.Year * 12 + i.VALIDDATE.Month >= rangeMonths && i.VALIDDATE.Year * 12 + i.VALIDDATE.Month <= months).OrderBy(i => i.VALIDDATE).ToList();
+                //List<AdStatistic> statistic = context.ADStatistics.Where(i => (adID < 0f ? i.ID != adID : i.ID == adID) && i.VALIDDATE.Year * 12 + i.VALIDDATE.Month >= rangeMonths && i.VALIDDATE.Year * 12 + i.VALIDDATE.Month <= months).ToList();//.OrderBy(i => i.ID).ToList();
+                List<AdStatistic> statistic = new List<AdStatistic>();
+                return new ActionResult<List<AdStatistic>>(statistic);
+            }
+            catch { }
+
+            return NotFound();
+        }*/
+
+        /*[HttpGet("getStatistic")]
         public async Task<ActionResult<AdStatistic>> GetADStatistic(int adID)
         {
             try
@@ -141,14 +188,33 @@ namespace AdvertisementAPI.Controllers
             catch { }
 
             return NotFound();
-        }
+        }*/
 
         [HttpGet("getAD")]
-        public async Task<ActionResult<ADInfo>> GetADInfo(int adID)
+        public async Task<ActionResult<ADInfo>> GetADInfo(int adID, bool count = false)
         {
             try
             {
                 ADInfo info = context.Advertisements.Where(i => i.ID == adID).Single();
+
+                DateTime currentTime = DateTime.UtcNow;
+                List<AdStatistic> statistics = context.ADStatistics.Where(i => i.STATID == adID && i.VALIDDATE.Year == currentTime.Year && i.VALIDDATE.Month == currentTime.Month).ToList();
+
+                if (statistics.Count <= 0f)
+                {
+                    await context.ADStatistics.AddAsync(new AdStatistic()
+                    {
+                        STATID = adID,
+                        VIEWS = 0,
+                        CLICKS = 0,
+                        VALIDDATE = DateTime.UtcNow
+                    });
+                    
+                    await context.SaveChangesAsync();
+                }
+
+                if(count)
+                    await context.ADStatistics.Where(i => i.STATID == adID && i.VALIDDATE.Year == currentTime.Year && i.VALIDDATE.Month == currentTime.Month).ExecuteUpdateAsync(i => i.SetProperty(i => i.VIEWS, i => i.VIEWS + 1));
 
                 return new ActionResult<ADInfo>(info);
             }
@@ -164,15 +230,31 @@ namespace AdvertisementAPI.Controllers
             try
             {
                 ADInfo info = context.Advertisements.Where(i => i.ID == adID).Single();
-                AdStatistic statistic = context.ADStatistics.Where(i => i.ID == adID).Single();
-                statistic.VIEWS += 1;
-                await context.SaveChangesAsync();
-                //context.ADStatistics.Update(statistic);
-                HttpClient client = new HttpClient();
+
+                /*DateTime currentTime = DateTime.UtcNow;
+                List<AdStatistic> statistics = context.ADStatistics.Where(i => i.ID == adID && i.VALIDDATE.Year == currentTime.Year && i.VALIDDATE.Month == currentTime.Month).ToList();
+
+                if (statistics.Count <= 0f)
+                {
+                    await context.ADStatistics.AddAsync(new AdStatistic()
+                    {
+                        ID = adID,
+                        VIEWS = 0,
+                        CLICKS = 0,
+                        VALIDDATE = DateTime.UtcNow
+                    });
+
+                    await context.SaveChangesAsync();
+                }
+
+                await context.ADStatistics.Where(i => i.ID == adID && i.VALIDDATE.Year == currentTime.Year && i.VALIDDATE.Month == currentTime.Month).ExecuteUpdateAsync(i => i.SetProperty(i => i.VIEWS, i => i.VIEWS + 1));
+                */
+                /*HttpClient client = new HttpClient();
                 HttpResponseMessage response = await client.GetAsync($"https://powderduck0.files.wordpress.com/2024/01/{info.URL?.ToLower()}");
-                byte[] bytes = await response.Content.ReadAsByteArrayAsync();
-                //byte[] imageBuffer = await System.IO.File.ReadAllBytesAsync($"Content/{info.URL}");
-                return File(bytes, "image/png");
+                byte[] bytes = await response.Content.ReadAsByteArrayAsync();*/
+                byte[] imageBuffer = await System.IO.File.ReadAllBytesAsync($"Content/{info.URL}");
+                return File(imageBuffer, "image/png");
+                //return File(bytes, "image/png");
             }
             catch { }
 
@@ -186,13 +268,27 @@ namespace AdvertisementAPI.Controllers
             string redirect = Request.Headers.Referer.ToString();
             try
             {
+                DateTime currentTime = DateTime.UtcNow;
                 ADInfo info = context.Advertisements.Where(i => i.ID == adID).Single();
-                AdStatistic statistic = context.ADStatistics.Where(i => i.ID == adID).Single();
+                List<AdStatistic> statistics = context.ADStatistics.Where(i => i.STATID == adID && i.VALIDDATE.Year == currentTime.Year && i.VALIDDATE.Month == currentTime.Month).ToList();
+
                 if (info.LINK != null)
                     redirect = info.LINK;
-                statistic.CLICKS += 1;
 
-                await context.SaveChangesAsync();
+                if(statistics.Count <= 0f)
+                {
+                    await context.ADStatistics.AddAsync(new AdStatistic()
+                    {
+                        STATID = adID, 
+                        VIEWS = 0,
+                        CLICKS = 0,
+                        VALIDDATE = DateTime.UtcNow
+                    });
+
+                    await context.SaveChangesAsync();
+                }
+
+                await context.ADStatistics.Where(i => i.STATID == adID && i.VALIDDATE.Year == currentTime.Year && i.VALIDDATE.Month == currentTime.Month).ExecuteUpdateAsync(i => i.SetProperty(i => i.CLICKS, i => i.CLICKS + 1));
             }
             catch { }
 

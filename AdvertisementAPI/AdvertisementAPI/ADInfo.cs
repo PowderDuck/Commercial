@@ -6,5 +6,6 @@
         public string? URL { get; set; }
         public string? LINK { get; set; }
         public int? SITEID { get; set; }
+        public string? CLIENT { get; set; }
     }
 }
