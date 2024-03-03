@@ -136,6 +136,16 @@ namespace AdvertisementAPI.Controllers
             return new BadRequestResult();
         }
 
+        [HttpGet("availableAds")]
+        public async Task<ActionResult<List<int>>> GetAdIndices()
+        {
+            /*List<AdStatistic> stats = context.ADStatistics.GroupBy(i => i.STATID).Select(b => new AdStatistic() { STATID = b.Key }).ToList();
+            List<int> indices = stats.Select(i => (int)i.STATID).ToList();*/
+            List<int> indices = context.ADStatistics.GroupBy(i => i.STATID).Select(b => (int)b.Key).ToList();
+
+            return new ActionResult<List<int>>(indices);
+        }
+
         [HttpGet("getStatistic")]
         public async Task<ActionResult<List<AdStatistic>>> GetADStatistic(int adID = -1, int m = 0, int y = 0, int range = 1)
         {
