@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\PowderDuck\\source\\repos\\AdvertisementAPI\\AdvertisementAPI\\wwwroot\\Graphs\\Charter.html",
+      "PackagePath": "staticwebassets\\Graphs\\Charter.html"
+    },
+    {
+      "Id": "C:\\Users\\PowderDuck\\source\\repos\\AdvertisementAPI\\AdvertisementAPI\\wwwroot\\Graphs\\apexcharts.js",
+      "PackagePath": "staticwebassets\\Graphs\\apexcharts.js"
+    },
+    {
+      "Id": "C:\\Users\\PowderDuck\\source\\repos\\AdvertisementAPI\\AdvertisementAPI\\wwwroot\\Graphs\\charter.js",
+      "PackagePath": "staticwebassets\\Graphs\\charter.js"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.AdvertisementAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.AdvertisementAPI.props",
+      "PackagePath": "build\\AdvertisementAPI.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.AdvertisementAPI.props",
+      "PackagePath": "buildMultiTargeting\\AdvertisementAPI.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildTransitive.AdvertisementAPI.props",
+      "PackagePath": "buildTransitive\\AdvertisementAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

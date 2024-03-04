@@ -1,11 +1,77 @@
 {
   "Version": 1,
-  "Hash": "WPHAKjGacIs8QkuMAC7xu/i/aQthSI2NIfuPaZMlZKU=",
+  "Hash": "Apvi0pHYMLA6rHHu5w+elkjLd1oXQ3je2DjMPwMm51g=",
   "Source": "AdvertisementAPI",
   "BasePath": "_content/AdvertisementAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "AdvertisementAPI\\wwwroot",
+      "Source": "AdvertisementAPI",
+      "ContentRoot": "C:\\Users\\PowderDuck\\source\\repos\\AdvertisementAPI\\AdvertisementAPI\\wwwroot\\",
+      "BasePath": "_content/AdvertisementAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\PowderDuck\\source\\repos\\AdvertisementAPI\\AdvertisementAPI\\wwwroot\\Graphs\\apexcharts.js",
+      "SourceId": "AdvertisementAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\PowderDuck\\source\\repos\\AdvertisementAPI\\AdvertisementAPI\\wwwroot\\",
+      "BasePath": "_content/AdvertisementAPI",
+      "RelativePath": "Graphs/apexcharts.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Graphs\\apexcharts.js"
+    },
+    {
+      "Identity": "C:\\Users\\PowderDuck\\source\\repos\\AdvertisementAPI\\AdvertisementAPI\\wwwroot\\Graphs\\Charter.html",
+      "SourceId": "AdvertisementAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\PowderDuck\\source\\repos\\AdvertisementAPI\\AdvertisementAPI\\wwwroot\\",
+      "BasePath": "_content/AdvertisementAPI",
+      "RelativePath": "Graphs/Charter.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Graphs\\Charter.html"
+    },
+    {
+      "Identity": "C:\\Users\\PowderDuck\\source\\repos\\AdvertisementAPI\\AdvertisementAPI\\wwwroot\\Graphs\\charter.js",
+      "SourceId": "AdvertisementAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\PowderDuck\\source\\repos\\AdvertisementAPI\\AdvertisementAPI\\wwwroot\\",
+      "BasePath": "_content/AdvertisementAPI",
+      "RelativePath": "Graphs/charter.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Graphs\\charter.js"
+    }
+  ]
 }

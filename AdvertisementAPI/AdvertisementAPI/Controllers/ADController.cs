@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
+using Microsoft.IdentityModel.Tokens;
 using Npgsql;
 using System.Net;
 using System.Numerics;
@@ -134,6 +135,20 @@ namespace AdvertisementAPI.Controllers
             catch { }
 
             return new BadRequestResult();
+        }
+
+        [HttpGet("graphs")]
+        public async Task<ContentResult> GraphAuthentication(string username, string password)
+        {
+            Client? cl = await context.Clients.SingleOrDefaultAsync(i => i.Username == username && i.Password == password);
+
+            if(cl != null)
+            {
+                string charter = await System.IO.File.ReadAllTextAsync("Content/Graphs/Charter.html");
+                return new ContentResult() { Content = charter, ContentType = "text/html" };
+            }
+
+            return new ContentResult() { Content = "<h1> Unauthorized <h1>", ContentType = "text/html" };
         }
 
         [HttpGet("availableAds")]
