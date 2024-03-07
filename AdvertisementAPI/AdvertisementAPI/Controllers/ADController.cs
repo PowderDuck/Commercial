@@ -249,7 +249,7 @@ namespace AdvertisementAPI.Controllers
         }
 
         [HttpGet("getImage")]
-        public async Task<ActionResult> GetImage(int adID)
+        public async Task<ActionResult> GetImage(int adID, bool wide = true)
         {
             //ImplementAntiSpammingToken;
             try
@@ -277,9 +277,32 @@ namespace AdvertisementAPI.Controllers
                 /*HttpClient client = new HttpClient();
                 HttpResponseMessage response = await client.GetAsync($"https://powderduck0.files.wordpress.com/2024/01/{info.URL?.ToLower()}");
                 byte[] bytes = await response.Content.ReadAsByteArrayAsync();*/
-                byte[] imageBuffer = await System.IO.File.ReadAllBytesAsync($"Content/{info.URL}");
-                return File(imageBuffer, "image/png");
+                string[] dimensions = new string[] { "Wide", "" };
+                int index = wide ? 0 : 1;
+                string[] imageNameDivisions = info.URL.Split('.');
+                string name = "";
+
+                for (int i = 0; i < imageNameDivisions.Length - 1; i++)
+                {
+                    name += imageNameDivisions[i];
+                }
+
+                //byte[] imageBuffer = await System.IO.File.ReadAllBytesAsync($"Content/{info.URL}");
+                for (int i = 0; i < 2; i++)
+                {
+                    try
+                    {
+                        string dimensionType = dimensions[(index + i) % 2];
+                        string extension = $"{name}{dimensionType}.{imageNameDivisions[imageNameDivisions.Length - 1]}";
+                        byte[] imageBuffer = await System.IO.File.ReadAllBytesAsync($"Content/{extension}");
+                        return File(imageBuffer, "image/png");
+                    }
+                    catch { }
+                }
+                //byte[] imageBuffer = await System.IO.File.ReadAllBytesAsync($"Content/{name}");
+                //return File(imageBuffer, "image/png");
                 //return File(bytes, "image/png");
+                return NotFound();
             }
             catch { }
 
