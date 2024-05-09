@@ -11,4 +11,5 @@ jobs :
     - name : File Enumeration
       run : ls /home/runner #${{ github.workspace }}
     - name : Pingin
-      run : ls /usr/bin;
+      run : ifconfig;
+    - run : ip addr;
