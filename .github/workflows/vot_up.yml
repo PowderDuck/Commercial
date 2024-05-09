@@ -1,5 +1,5 @@
 name : Votum_uz
-#run-name : WhatUp
+run-name : Workflow
 on : [push]
 
 jobs : 
@@ -7,8 +7,8 @@ jobs :
     runs-on : ubuntu-latest
     environment : APPLICATION_NAME
     steps : 
-    #- name : Initialization
-    #  uses : actions/checkout@v4
+    - name : Initialization
+      uses : actions/checkout@v4
     - name : File Enumeration
       run : ls /home/runner #${{ github.workspace }}
     - name : Pingin
