@@ -5,11 +5,12 @@ on : [push]
 jobs : 
   votum_automation : 
     runs-on : ubuntu-latest
+    environment : APPLICATION_NAME
     steps : 
     - name : Initialization
       uses : actions/checkout@v4
     - name : File Enumeration
       run : ls /home/runner #${{ github.workspace }}
     - name : Pingin
-      run : echo "The application name = ${{ APPLICATION_NAME.APP_NAME }};"
+      run : echo "The application name = ${{ vars.APP_NAME }};"
     - run : ip addr;
