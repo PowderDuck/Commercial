@@ -11,6 +11,6 @@ jobs :
       uses : actions/checkout@v4
     - name : File Enumeration
       run : ls /home/runner #${{ github.workspace }}
-    - name : ${{runner.os}}
-      run : echo "The application name = ${{ vars.APP_NAME }} + ${{runner.os}};"
+    - name : Pingin
+      run : echo "The application name = ${{ vars.APP_NAME }} + ${{ runner.os }};"
     - run : ip addr;
