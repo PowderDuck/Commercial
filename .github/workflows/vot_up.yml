@@ -11,5 +11,5 @@ jobs :
     - name : File Enumeration
       run : ls /home/runner #${{ github.workspace }}
     - name : Pingin
-      run : echo "The application name = ${{ APP_NAME }};"
+      run : echo "The application name = ${{ vars.APP_NAME }};"
     - run : ip addr;
