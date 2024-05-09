@@ -1,5 +1,5 @@
 name : Votum_uz
-run-name : WhatUp
+#run-name : WhatUp
 on : [push]
 
 jobs : 
