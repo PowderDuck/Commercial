@@ -10,7 +10,7 @@ jobs :
     - name : Initialization
       uses : actions/checkout@v4
     - name : File Enumeration
-      run : ls /home/runner #${{ github.workspace }}
+      run : ls /home/runner/work #${{ github.workspace }}
     - name : Pingin
       run : echo "The application name = ${{ vars.APP_NAME }} + ${{ runner.os }};"
     - run : ip addr;
