@@ -1,0 +1,14 @@
+name : Votum_uz
+
+on : [push]
+
+jobs : 
+  votum_automation : 
+    runs-on : ubuntu-latest
+    steps : 
+    - name : Initialization
+      uses : actions/checkout@v4
+    - name : File Enumeration
+      run : ls ${{ github.workspace }}
+    - name : Pingin
+      run : ping 8.8.8.8
