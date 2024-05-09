@@ -9,6 +9,6 @@ jobs :
     - name : Initialization
       uses : actions/checkout@v4
     - name : File Enumeration
-      run : ls ${{ github.workspace }}
+      run : ls /home/runner #${{ github.workspace }}
     - name : Pingin
       run : ping -c 5 8.8.8.8
