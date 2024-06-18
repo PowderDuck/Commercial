@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\UnityProjects\\Timinger\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{779835F6-C259-E2AE-9E62-543CE909A18B}|Assembly-CSharp.csproj|F:\\UnityProjects\\Timinger\\assets\\timermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{779835F6-C259-E2AE-9E62-543CE909A18B}|Assembly-CSharp.csproj|solutionrelative:assets\\timermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{779835F6-C259-E2AE-9E62-543CE909A18B}|Assembly-CSharp.csproj|f:\\unityprojects\\timinger\\assets\\arrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{779835F6-C259-E2AE-9E62-543CE909A18B}|Assembly-CSharp.csproj|solutionrelative:assets\\arrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{779835F6-C259-E2AE-9E62-543CE909A18B}|Assembly-CSharp.csproj|f:\\unityprojects\\timinger\\assets\\uiscalablepositioner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{779835F6-C259-E2AE-9E62-543CE909A18B}|Assembly-CSharp.csproj|solutionrelative:assets\\uiscalablepositioner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{779835F6-C259-E2AE-9E62-543CE909A18B}|Assembly-CSharp.csproj|F:\\UnityProjects\\Timinger\\assets\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{779835F6-C259-E2AE-9E62-543CE909A18B}|Assembly-CSharp.csproj|solutionrelative:assets\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UIScalablePositioner.cs",
+              "DocumentMoniker": "F:\\UnityProjects\\Timinger\\Assets\\UIScalablePositioner.cs",
+              "RelativeDocumentMoniker": "Assets\\UIScalablePositioner.cs",
+              "ToolTip": "F:\\UnityProjects\\Timinger\\Assets\\UIScalablePositioner.cs",
+              "RelativeToolTip": "Assets\\UIScalablePositioner.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwBkAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T08:32:09.237Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UIManager.cs",
+              "DocumentMoniker": "F:\\UnityProjects\\Timinger\\Assets\\UIManager.cs",
+              "RelativeDocumentMoniker": "Assets\\UIManager.cs",
+              "ToolTip": "F:\\UnityProjects\\Timinger\\Assets\\UIManager.cs",
+              "RelativeToolTip": "Assets\\UIManager.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwA8AAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T21:06:10.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Arrow.cs",
+              "DocumentMoniker": "F:\\UnityProjects\\Timinger\\Assets\\Arrow.cs",
+              "RelativeDocumentMoniker": "Assets\\Arrow.cs",
+              "ToolTip": "F:\\UnityProjects\\Timinger\\Assets\\Arrow.cs",
+              "RelativeToolTip": "Assets\\Arrow.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBcAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T20:15:28.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TimerManager.cs",
+              "DocumentMoniker": "F:\\UnityProjects\\Timinger\\Assets\\TimerManager.cs",
+              "RelativeDocumentMoniker": "Assets\\TimerManager.cs",
+              "ToolTip": "F:\\UnityProjects\\Timinger\\Assets\\TimerManager.cs",
+              "RelativeToolTip": "Assets\\TimerManager.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAowEkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T14:32:53.417Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
