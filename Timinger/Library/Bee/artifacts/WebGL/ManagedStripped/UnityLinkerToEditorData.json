@@ -36,7 +36,7 @@
           {
             "name": "AudioBehaviour",
             "scenes": [
-              "Assets/GameScene.unity"
+              "Assets/Scenes/GameScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -50,7 +50,7 @@
           {
             "name": "AudioListener",
             "scenes": [
-              "Assets/GameScene.unity"
+              "Assets/Scenes/GameScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -87,7 +87,7 @@
           {
             "name": "Camera",
             "scenes": [
-              "Assets/GameScene.unity"
+              "Assets/Scenes/GameScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -107,7 +107,7 @@
           {
             "name": "Cubemap",
             "scenes": [
-              "Assets/GameScene.unity"
+              "Assets/Scenes/GameScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -127,7 +127,7 @@
           {
             "name": "EditorExtension",
             "scenes": [
-              "Assets/GameScene.unity"
+              "Assets/Scenes/GameScene.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -141,7 +141,7 @@
           {
             "name": "GameObject",
             "scenes": [
-              "Assets/GameScene.unity"
+              "Assets/Scenes/GameScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -167,7 +167,7 @@
           {
             "name": "LevelGameManager",
             "scenes": [
-              "Assets/GameScene.unity"
+              "Assets/Scenes/GameScene.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -175,7 +175,7 @@
           {
             "name": "Light",
             "scenes": [
-              "Assets/GameScene.unity"
+              "Assets/Scenes/GameScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -195,7 +195,7 @@
           {
             "name": "LightmapSettings",
             "scenes": [
-              "Assets/GameScene.unity"
+              "Assets/Scenes/GameScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -209,7 +209,7 @@
           {
             "name": "Material",
             "scenes": [
-              "Assets/GameScene.unity"
+              "Assets/Scenes/GameScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -235,7 +235,7 @@
           {
             "name": "MonoBehaviour",
             "scenes": [
-              "Assets/GameScene.unity"
+              "Assets/Scenes/GameScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -249,7 +249,7 @@
           {
             "name": "MonoScript",
             "scenes": [
-              "Assets/GameScene.unity"
+              "Assets/Scenes/GameScene.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -257,7 +257,7 @@
           {
             "name": "NamedObject",
             "scenes": [
-              "Assets/GameScene.unity"
+              "Assets/Scenes/GameScene.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -289,7 +289,7 @@
           {
             "name": "RectTransform",
             "scenes": [
-              "Assets/GameScene.unity"
+              "Assets/Scenes/GameScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -303,7 +303,7 @@
           {
             "name": "RenderSettings",
             "scenes": [
-              "Assets/GameScene.unity"
+              "Assets/Scenes/GameScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -335,7 +335,7 @@
           {
             "name": "Shader",
             "scenes": [
-              "Assets/GameScene.unity"
+              "Assets/Scenes/GameScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -355,7 +355,7 @@
           {
             "name": "Sprite",
             "scenes": [
-              "Assets/GameScene.unity"
+              "Assets/Scenes/GameScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -708,7 +708,7 @@
           {
             "name": "Font",
             "scenes": [
-              "Assets/GameScene.unity"
+              "Assets/Scenes/GameScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -751,7 +751,7 @@
           {
             "name": "Canvas",
             "scenes": [
-              "Assets/GameScene.unity"
+              "Assets/Scenes/GameScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -765,7 +765,7 @@
           {
             "name": "CanvasRenderer",
             "scenes": [
-              "Assets/GameScene.unity"
+              "Assets/Scenes/GameScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
