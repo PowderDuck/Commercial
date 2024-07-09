@@ -1,0 +1,39 @@
+{
+    "data": [
+        {
+            "id": 0,
+            "content": "Article 0",
+            "effect": 3
+        },
+        {
+            "id": 1,
+            "content": "Article 1",
+            "effect": -1
+        },
+        {
+            "id": 2,
+            "content": "Article 2",
+            "effect": 2
+        },
+        {
+            "id": 3,
+            "content": "Article 3",
+            "effect": -7
+        },
+        {
+            "id": 4,
+            "content": "Article 4",
+            "effect": 1
+        },
+        {
+            "id": 5,
+            "content": "Article 5",
+            "effect": 3
+        },
+        {
+            "id": 6,
+            "content": "Article 6",
+            "effect": -2
+        }
+    ]
+}

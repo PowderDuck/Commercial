@@ -1,0 +1,14 @@
+C:\Users\PowderDuck\source\repos\ArticleThemeExercise\ArticleThemeExercise\bin\Debug\net8.0\ArticleThemeExercise.exe
+C:\Users\PowderDuck\source\repos\ArticleThemeExercise\ArticleThemeExercise\bin\Debug\net8.0\ArticleThemeExercise.deps.json
+C:\Users\PowderDuck\source\repos\ArticleThemeExercise\ArticleThemeExercise\bin\Debug\net8.0\ArticleThemeExercise.runtimeconfig.json
+C:\Users\PowderDuck\source\repos\ArticleThemeExercise\ArticleThemeExercise\bin\Debug\net8.0\ArticleThemeExercise.dll
+C:\Users\PowderDuck\source\repos\ArticleThemeExercise\ArticleThemeExercise\bin\Debug\net8.0\ArticleThemeExercise.pdb
+C:\Users\PowderDuck\source\repos\ArticleThemeExercise\ArticleThemeExercise\obj\Debug\net8.0\ArticleThemeExercise.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PowderDuck\source\repos\ArticleThemeExercise\ArticleThemeExercise\obj\Debug\net8.0\ArticleThemeExercise.AssemblyInfoInputs.cache
+C:\Users\PowderDuck\source\repos\ArticleThemeExercise\ArticleThemeExercise\obj\Debug\net8.0\ArticleThemeExercise.AssemblyInfo.cs
+C:\Users\PowderDuck\source\repos\ArticleThemeExercise\ArticleThemeExercise\obj\Debug\net8.0\ArticleThemeExercise.csproj.CoreCompileInputs.cache
+C:\Users\PowderDuck\source\repos\ArticleThemeExercise\ArticleThemeExercise\obj\Debug\net8.0\ArticleThemeExercise.dll
+C:\Users\PowderDuck\source\repos\ArticleThemeExercise\ArticleThemeExercise\obj\Debug\net8.0\refint\ArticleThemeExercise.dll
+C:\Users\PowderDuck\source\repos\ArticleThemeExercise\ArticleThemeExercise\obj\Debug\net8.0\ArticleThemeExercise.pdb
+C:\Users\PowderDuck\source\repos\ArticleThemeExercise\ArticleThemeExercise\obj\Debug\net8.0\ArticleThemeExercise.genruntimeconfig.cache
+C:\Users\PowderDuck\source\repos\ArticleThemeExercise\ArticleThemeExercise\obj\Debug\net8.0\ref\ArticleThemeExercise.dll
